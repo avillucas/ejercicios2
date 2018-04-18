@@ -1,0 +1,8 @@
+D:\lucas\Ejercicios\Ejercicio_28\bin\Debug\Ejercicio_28.exe.config
+D:\lucas\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.csprojResolveAssemblyReference.cache
+D:\lucas\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.Contador.resources
+D:\lucas\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.csproj.GenerateResource.Cache
+D:\lucas\Ejercicios\Ejercicio_28\bin\Debug\Ejercicio_28.exe
+D:\lucas\Ejercicios\Ejercicio_28\bin\Debug\Ejercicio_28.pdb
+D:\lucas\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.exe
+D:\lucas\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.pdb
