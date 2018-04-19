@@ -35,7 +35,7 @@ namespace Ejercicio_35
             }
         }
 
-        public override string MostrarDatos()
+        public virtual string MostrarDatos()
         {
             StringBuilder st = new StringBuilder();
             st.AppendFormat("\n\tDNI :{0}", dni);

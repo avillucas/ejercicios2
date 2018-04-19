@@ -19,12 +19,6 @@ namespace Ejercicio_35
             this.fechaDeNacimiento = fechaDeNacimiento;
         }
 
-        public override string MostrarDatos()
-        {
-            return base.MostrarDatos();
-        }
-
-
         public static bool operator !=(DirectorTecnico d1, DirectorTecnico d2)
         {
             return (d1.dni != d2.dni);
@@ -34,6 +28,19 @@ namespace Ejercicio_35
         public static bool operator ==(DirectorTecnico d1, DirectorTecnico d2)
         {
             return (d1.dni == d2.dni);
+        }
+
+        /// <summary>
+        /// MostrarDatos retornará una cadena de string con todos los datos y estadística del Director Tecnico
+        /// </summary>
+        /// <returns></returns>
+        public override string MostrarDatos()
+        {
+            StringBuilder st = new StringBuilder();
+            st.AppendFormat("\n\tDNI :{0}", dni);
+            st.AppendFormat("\n\tNombre :{0}", nombre);
+            st.AppendFormat("\n\tFecha de Nacimiento :{0}", fechaDeNacimiento);
+            return st.ToString();
         }
     }
 }
