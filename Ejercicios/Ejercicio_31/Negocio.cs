@@ -21,8 +21,10 @@ namespace Ejercicio_31
             set
             {
                //TODO ver como hacer esto mejor
-               if(this != value) {
-                    if (this + value) {
+               if(this != value)
+                {
+                    if (this + value)
+                    {
                         bool funciono = true;
                     }
                 }
@@ -63,15 +65,12 @@ namespace Ejercicio_31
 
         public static bool operator ~(Negocio n)
         {
-            try
-            {
+            if( n.clientes.Count > 0 )
+            {             
                 Cliente siguienteCliente = n.Cliente;
                 return n.caja.Atender(siguienteCliente);
             }
-            catch (Exception) {
-                return false;
-            }
-           
+            return false;
         }
     }
 }

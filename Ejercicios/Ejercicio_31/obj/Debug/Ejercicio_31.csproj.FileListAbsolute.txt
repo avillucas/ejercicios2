@@ -5,3 +5,10 @@ C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_31\obj\Debug\Ejercicio_3
 C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_31\obj\Debug\Ejercicio_31.csproj.CoreCompileInputs.cache
 C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_31\obj\Debug\Ejercicio_31.exe
 C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_31\obj\Debug\Ejercicio_31.pdb
+C:\Users\Lucas\c-sharp\ejercicios2\Ejercicios\Ejercicio_31\bin\Debug\Ejercicio_31.exe.config
+C:\Users\Lucas\c-sharp\ejercicios2\Ejercicios\Ejercicio_31\bin\Debug\Ejercicio_31.exe
+C:\Users\Lucas\c-sharp\ejercicios2\Ejercicios\Ejercicio_31\bin\Debug\Ejercicio_31.pdb
+C:\Users\Lucas\c-sharp\ejercicios2\Ejercicios\Ejercicio_31\obj\Debug\Ejercicio_31.csprojResolveAssemblyReference.cache
+C:\Users\Lucas\c-sharp\ejercicios2\Ejercicios\Ejercicio_31\obj\Debug\Ejercicio_31.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\c-sharp\ejercicios2\Ejercicios\Ejercicio_31\obj\Debug\Ejercicio_31.exe
+C:\Users\Lucas\c-sharp\ejercicios2\Ejercicios\Ejercicio_31\obj\Debug\Ejercicio_31.pdb

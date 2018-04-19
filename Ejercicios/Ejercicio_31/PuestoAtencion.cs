@@ -9,7 +9,7 @@ namespace Ejercicio_31
 {
     class PuestoAtencion
     {
-        const int tiempoAtencion = 20;
+        const int tiempoAtencion = 2000;
         static private int numeroActual;
         private Puesto puesto;
 

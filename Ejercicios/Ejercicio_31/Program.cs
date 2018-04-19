@@ -40,12 +40,12 @@ namespace Ejercicio_31
                 Console.WriteLine("Tato esta en la cola de Adidas");
             }
             //atender            
-            while(~adidas) {
-                Console.WriteLine("Adidas Termino la atencion del numero");
-            }            
+            do
+            {                      
+                Console.WriteLine("Adidas requiere atender al numero {0} ", PuestoAtencion.NumeroActual);
+            } while (~adidas);
+            Console.WriteLine("Adidas termino de atender");
             Console.ReadKey();
-
-
         }
     }
 }
