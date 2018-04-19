@@ -1,0 +1,7 @@
+C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_32\obj\Debug\Ejercicio_32.csprojResolveAssemblyReference.cache
+C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_32\obj\Debug\Ejercicio_32.csproj.CoreCompileInputs.cache
+C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_32\bin\Debug\Ejercicio_32.exe.config
+C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_32\bin\Debug\Ejercicio_32.exe
+C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_32\bin\Debug\Ejercicio_32.pdb
+C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_32\obj\Debug\Ejercicio_32.exe
+C:\Users\avill\C-sharp\ejercicios2\Ejercicios\Ejercicio_32\obj\Debug\Ejercicio_32.pdb
