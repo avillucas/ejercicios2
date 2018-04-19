@@ -1,0 +1,6 @@
+D:\lucas2\Ejercicios\Ejercicio_33\bin\Debug\Ejercicio_33.exe.config
+D:\lucas2\Ejercicios\Ejercicio_33\bin\Debug\Ejercicio_33.exe
+D:\lucas2\Ejercicios\Ejercicio_33\bin\Debug\Ejercicio_33.pdb
+D:\lucas2\Ejercicios\Ejercicio_33\obj\Debug\Ejercicio_33.csprojResolveAssemblyReference.cache
+D:\lucas2\Ejercicios\Ejercicio_33\obj\Debug\Ejercicio_33.exe
+D:\lucas2\Ejercicios\Ejercicio_33\obj\Debug\Ejercicio_33.pdb

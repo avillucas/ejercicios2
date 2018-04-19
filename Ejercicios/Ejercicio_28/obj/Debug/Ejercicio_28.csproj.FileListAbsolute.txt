@@ -6,3 +6,6 @@ D:\lucas\Ejercicios\Ejercicio_28\bin\Debug\Ejercicio_28.exe
 D:\lucas\Ejercicios\Ejercicio_28\bin\Debug\Ejercicio_28.pdb
 D:\lucas\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.exe
 D:\lucas\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.pdb
+D:\lucas2\Ejercicios\Ejercicio_28\bin\Debug\Ejercicio_28.exe.config
+D:\lucas2\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.exe
+D:\lucas2\Ejercicios\Ejercicio_28\obj\Debug\Ejercicio_28.pdb
