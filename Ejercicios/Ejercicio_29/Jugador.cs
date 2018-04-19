@@ -41,9 +41,11 @@ namespace Ejercicio_29
         /// <summary>        
         /// Inicializa solo con el nombre
         /// </summary>
+        /// <param name="dni">Dni del jugador</param>
         /// <param name="nombre">Nombre del jugador</param>
-        public Jugador(string nombre) 
+        public Jugador(int dni, string nombre) 
         {
+            this.dni = dni;
             this.nombre = nombre;
         }
 
@@ -53,7 +55,7 @@ namespace Ejercicio_29
         /// <param name="nombre"> Nombre del jugador</param>
         /// <param name="totalGoles">Total de goles convertidos</param>
         /// <param name="totalPartidos">Total de partidos jugados</param>
-        public Jugador(string nombre, int totalGoles, int totalPartidos) : this(nombre) 
+        public Jugador(int dni, string nombre, int totalGoles, int totalPartidos) : this(dni, nombre) 
         {
             this.totalGoles = totalGoles;
             this.partidosJugados = totalPartidos;

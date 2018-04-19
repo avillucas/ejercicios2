@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_16", "..\Ejercicio_16\Ejercicio_16\Ejercicio_16.csproj", "{9401D359-AF7B-418C-B6E3-12318B150B13}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_17", "..\Ejercicio_17\Ejercicio_17\Ejercicio_17.csproj", "{46CCF5CB-8E6C-4C0B-AA85-19799A312767}"
@@ -46,6 +48,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_33", "Ejercicio_33\Ejercicio_33.csproj", "{C60D3B77-D342-49EF-B52D-9380567CD545}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_29", "Ejercicio_29\Ejercicio_29.csproj", "{68A2687E-9260-4FC4-87B2-601741B0FA68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_30", "Ejercicio_30\Ejercicio_30.csproj", "{7CCA0320-CE17-46A2-9CE9-CD6AA7BB9EC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_31", "Ejercicio_31\Ejercicio_31.csproj", "{0C79708F-6BDD-4CEB-9C71-436F21524E63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,8 +151,19 @@ Global
 		{68A2687E-9260-4FC4-87B2-601741B0FA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68A2687E-9260-4FC4-87B2-601741B0FA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68A2687E-9260-4FC4-87B2-601741B0FA68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CCA0320-CE17-46A2-9CE9-CD6AA7BB9EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCA0320-CE17-46A2-9CE9-CD6AA7BB9EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCA0320-CE17-46A2-9CE9-CD6AA7BB9EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCA0320-CE17-46A2-9CE9-CD6AA7BB9EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C79708F-6BDD-4CEB-9C71-436F21524E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C79708F-6BDD-4CEB-9C71-436F21524E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C79708F-6BDD-4CEB-9C71-436F21524E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C79708F-6BDD-4CEB-9C71-436F21524E63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88DEC3A4-C456-490D-9CB5-DD7DF5223FC5}
 	EndGlobalSection
 EndGlobal

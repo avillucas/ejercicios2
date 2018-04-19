@@ -12,11 +12,11 @@ namespace Ejercicio_29
         {
             //Generar los métodos en el Main para probar el código.
             Equipo estudiantes = new Equipo(3,"Estudiantes");
-            Jugador elTopo = new Jugador("El Topo Gimenez",2,1);
-            Jugador teletubbieDomingues = new Jugador("Teletubbie Dominguez", 2,3);
-            Jugador pipo = new Jugador("El pipo", 2, 10);
-            Jugador edgardoTom = new Jugador("Edgardo Tom", 20, 1);
-            Jugador elPipi = new Jugador("Pipi gonzales");
+            Jugador elTopo = new Jugador(132,"El Topo Gimenez",2,1);
+            Jugador teletubbieDomingues = new Jugador(111,"Teletubbie Dominguez", 2,3);
+            Jugador pipo = new Jugador(110,"El pipo", 2, 10);
+            Jugador edgardoTom = new Jugador(1145666,"Edgardo Tom", 20, 1);
+            Jugador elPipi = new Jugador(1231321,"Pipi gonzales");
             //
             if (estudiantes + teletubbieDomingues) {
                 Console.WriteLine("Se agrego a teletubbie");
