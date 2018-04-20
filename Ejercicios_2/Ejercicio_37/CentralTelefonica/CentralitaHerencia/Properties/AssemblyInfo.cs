@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ejercicio_37")]
+[assembly: AssemblyTitle("CentralitaHerencia")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Ejercicio_37")]
+[assembly: AssemblyProduct("CentralitaHerencia")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cb2f81b4-9e4d-4e85-9b86-e671069e9bf5")]
+[assembly: Guid("94c00178-ee29-4d51-aa02-d9d43b2d2b59")]
 
 // Version information for an assembly consists of the following four values:
 //
