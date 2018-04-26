@@ -10,14 +10,18 @@ namespace CentralitaHerencia
     {
         protected Franja franja;
 
+        
+        /// <summary>
+        /// Costos de las franjas expresadas en centavos Franja_1: 99, Franja_2: 125 y Franja_3: 66.
+        /// </summary>
         public enum Franja
         {            
-            Franja_1,
-            Franja_2,
-            Franja_3
+            Franja_1 = 99,
+            Franja_2 = 125,
+            Franja_3 = 66
         }
 
-        public float CostoLlamada
+        public override float CostoLlamada
         {
             get
             {
@@ -25,8 +29,11 @@ namespace CentralitaHerencia
             }
         }
 
-        public Provincial(string origen, Franja miFranja, float duracion, string destino): base(duracion, destino, origen)
+        public Provincial(string origen, Franja miFranja, float duracion, string destino)
         {
+            this.duracion = duracion;
+            this.nroOrigen = origen;
+            this.nroDestino = destino;
             this.franja = miFranja;
         }
 
@@ -35,34 +42,34 @@ namespace CentralitaHerencia
         }
 
         /// <summary>
-        /// TODO  revisar si devuelve el valor o otro 
+        
         /// </summary>
         /// <returns></returns>
         private float CalcularCosto()
         {
+            //Se puede hacer esto directamente con enumerados
             //Franja_1: 0.99, Franja_2: 1.25 y Franja_3: 0.66.
-            double coeficiente = 0 ;
-            switch(franja){
-                case Franja.Franja_1: 
-                    coeficiente = 0.99; 
-                break;
-                case Franja.Franja_2:
-                    coeficiente = 1.25;
-                break;
-                case Franja.Franja_3:
-                    coeficiente = 0.66;
-                break;
-            }
+            double coeficiente = (int)franja / 100;            
             return (float)(Duracion * coeficiente);
         }
 
-        public override string Mostrar()
+        protected override string Mostrar()
         {
+            string baseStr = base.Mostrar();
             StringBuilder st = new StringBuilder();
-            st.AppendFormat("\n Nro de origen {0}  llamando a Nro de destino {1} por una duracion de {2} con un costo de {3} por la franja horaria {4}", NroOrigen, NroDestino, Duracion, CostoLlamada,franja.ToString());
+            st.AppendLine(baseStr);
+            st.AppendFormat("\n Con un costo de {0} por la franja horaria {1}", CostoLlamada,franja.ToString());
             return st.ToString();
         }
 
+        public override string ToString()
+        {
+            return Mostrar();
+        }
 
+        public override bool Equals(object obj)
+        {
+            return (obj is Provincial);
+        }
     }
 }

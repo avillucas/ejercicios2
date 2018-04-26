@@ -41,7 +41,7 @@ namespace CentralitaHerencia
         {
             get
             {
-                return Llamadas;
+                return listaDeLlamadas;
             }
         }
 
@@ -53,6 +53,11 @@ namespace CentralitaHerencia
         public Centralita(string nombreEmpresa):this()
         {
             this.razonSocial = nombreEmpresa;
+        }
+
+        private void AgregarLlamada(Llamada nuevaLlamada) 
+        {       
+            this.listaDeLlamadas.Add(nuevaLlamada);
         }
 
         /// <summary>
@@ -71,24 +76,19 @@ namespace CentralitaHerencia
                 }
                 else if(llamada is Provincial && (tipo == Llamada.TipoDeLlamada.Local || tipo == Llamada.TipoDeLlamada.Todas))
                 {
-                    ganacia += ((Local)llamada).CostoLlamada;
+                    ganacia += ((Provincial)llamada).CostoLlamada;
                 }                
             }
             return ganacia;
         }
 
 
-        /// <summary>
-        /// El método Mostrar expondrá la razón social, la ganancia total, ganancia por llamados locales
-        /// y provinciales y el detalle de las llamadas realizadas.
-        /// </summary>
-        /// <returns></returns>
-        public string Mostrar() 
+        public override string ToString () 
         {
-            StringBuilder st = new StringBuilder();            
+            StringBuilder st = new StringBuilder();                        
             st.AppendFormat("\n razon social {0} ganancia total {1} Ganacias Locales {2} Ganancias Provinciales {3} ", razonSocial, GanaciasPorTotal , GananciasPorLocal,GanaciasPorProvincial);
             foreach(Llamada llamada in  listaDeLlamadas){
-                st.AppendFormat("\n llamado {0} ", llamada.Mostrar());
+                st.AppendFormat("\n llamado {0} ", llamada.ToString());
            }
             return st.ToString();
         }
@@ -97,5 +97,27 @@ namespace CentralitaHerencia
         {
             listaDeLlamadas.Sort(Llamada.OrdenarPorDuracion);
         }
+
+        public static bool operator ==(Centralita central, Llamada llamada)
+        {
+            return (central.listaDeLlamadas.IndexOf(llamada) != -1);
+        }
+
+        public static bool operator !=(Centralita central, Llamada llamada)
+        {
+            return !(central == llamada);
+        }
+
+        ///
+        public static Centralita operator +(Centralita central, Llamada llamada)
+        {
+            if (central == llamada)
+            {
+                throw new CentralitaException("La llamada ya se encuentra en la central","Centralita", "operator +");
+            }
+            central.AgregarLlamada(llamada);
+            return central;
+        }
+
     }
 }
