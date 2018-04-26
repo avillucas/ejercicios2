@@ -70,7 +70,7 @@ namespace CentralitaHerencia
             return -1;
         }
 
-        public static bool operator == ( Llamada l1, Llamada  l2){
+        public static bool operator == ( Llamada l1, Llamada  l2){            
             if (l1.Equals(l2) && l1.nroOrigen == l2.nroOrigen && l1.nroDestino == l2.nroDestino )
             {
                 return true;

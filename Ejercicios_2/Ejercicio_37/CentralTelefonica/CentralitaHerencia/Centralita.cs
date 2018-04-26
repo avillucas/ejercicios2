@@ -100,11 +100,17 @@ namespace CentralitaHerencia
 
         public static bool operator ==(Centralita central, Llamada llamada)
         {
-            return (central.listaDeLlamadas.IndexOf(llamada) != -1);
+            foreach (Llamada posibleLlamada in central.listaDeLlamadas)
+            {
+                if (posibleLlamada == (Llamada)llamada) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static bool operator !=(Centralita central, Llamada llamada)
-        {
+        {            
             return !(central == llamada);
         }
 
@@ -113,7 +119,7 @@ namespace CentralitaHerencia
         {
             if (central == llamada)
             {
-                throw new CentralitaException("La llamada ya se encuentra en la central","Centralita", "operator +");
+                throw new CentralitaException("La llamada "+llamada.NroOrigen+"=>"+llamada.NroDestino+" ya se encuentra en la central","Centralita", "operator +");
             }
             central.AgregarLlamada(llamada);
             return central;
