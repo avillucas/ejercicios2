@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_42
 {
-    class B
+    class C
     {
-        public B()
+        public C()
         {
             try
             {
-                A claseA = new A();
+                B claseB = new B();
             }
-            catch (Exception e) {
-                throw new UnaException("Error al crear A ", e);
+            catch (Exception e)
+            {
+                throw new MiException("Error al crear B ", e);
             }
-
         }
-   
     }
 }
