@@ -85,7 +85,7 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // Form1
+            // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,7 +95,8 @@
             this.Controls.Add(this.btnFacturacionLocal);
             this.Controls.Add(this.btnFacturacionTotal);
             this.Controls.Add(this.btnGenerarLlamada);
-            this.Name = "Form1";
+            this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Central telefonica";
             this.ResumeLayout(false);
 
