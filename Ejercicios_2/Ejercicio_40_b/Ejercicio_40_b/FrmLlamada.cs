@@ -94,6 +94,7 @@ namespace Ejercicio_40_b
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtNumeroDestino.Text = "";
+            txtNroOrigen.Text = "";
         }
 
         private void btnLlamar_Click(object sender, EventArgs e)
