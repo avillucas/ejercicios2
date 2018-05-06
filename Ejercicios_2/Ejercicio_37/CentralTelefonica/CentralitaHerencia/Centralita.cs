@@ -41,7 +41,7 @@ namespace CentralitaHerencia
         {
             get
             {
-                return Llamadas;
+                return listaDeLlamadas;
             }
         }
 
@@ -71,7 +71,7 @@ namespace CentralitaHerencia
                 }
                 else if(llamada is Provincial && (tipo == Llamada.TipoDeLlamada.Local || tipo == Llamada.TipoDeLlamada.Todas))
                 {
-                    ganacia += ((Local)llamada).CostoLlamada;
+                    ganacia += ((Provincial)llamada).CostoLlamada;
                 }                
             }
             return ganacia;
