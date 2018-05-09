@@ -72,11 +72,13 @@ namespace CentralitaHerencia
             float ganacia = 0;
             foreach (Llamada llamada in listaDeLlamadas) {
                 if (llamada is Local && ( tipo == Llamada.TipoDeLlamada.Local || tipo == Llamada.TipoDeLlamada.Todas)) {
-                    ganacia += ((Local)llamada).CostoLlamada;
+                    Local local = (Local)llamada;
+                    ganacia += local.CostoLlamada;
                 }
-                else if(llamada is Provincial && (tipo == Llamada.TipoDeLlamada.Local || tipo == Llamada.TipoDeLlamada.Todas))
+                else if(llamada is Provincial && (tipo == Llamada.TipoDeLlamada.Provincial || tipo == Llamada.TipoDeLlamada.Todas))
                 {
-                    ganacia += ((Provincial)llamada).CostoLlamada;
+                    Provincial provincial = (Provincial)llamada;
+                    ganacia += provincial.CostoLlamada;
                 }                
             }
             return ganacia;
@@ -115,14 +117,14 @@ namespace CentralitaHerencia
         }
 
         ///
-        public static Centralita operator +(Centralita central, Llamada llamada)
+        public static bool operator +(Centralita central, Llamada llamada)
         {
             if (central == llamada)
             {
-                throw new CentralitaException("La llamada "+llamada.NroOrigen+"=>"+llamada.NroDestino+" ya se encuentra en la central","Centralita", "operator +");
+                return false;
             }
             central.AgregarLlamada(llamada);
-            return central;
+            return true;
         }
 
     }

@@ -13,7 +13,12 @@ namespace CentralitaHerencia
         protected string nroDestino;
         protected string nroOrigen;
 
-
+        public enum TipoLlamada
+        {
+            Local,
+            Provincial,
+            Todas
+        }
         public abstract float CostoLlamada {get;}
 
         public float Duracion
@@ -54,6 +59,13 @@ namespace CentralitaHerencia
             return st.ToString();
         }
 
+        public Llamada(float duracion, string nroDestino, string nroOrigen) 
+        {
+            this.nroDestino = nroDestino;
+            this.nroOrigen = nroOrigen;
+            this.duracion = duracion;
+        }
+
         /// <summary>
         ///  OrdenarPorDuracion es un método de clase que recibirá dos Llamadas. Se utilizará para
         ///  ordenar una lista de llamadas de forma ascendente.
@@ -70,12 +82,8 @@ namespace CentralitaHerencia
             return -1;
         }
 
-        public static bool operator == ( Llamada l1, Llamada  l2){            
-            if (l1.Equals(l2) && l1.nroOrigen == l2.nroOrigen && l1.nroDestino == l2.nroDestino )
-            {
-                return true;
-            }
-            return false;
+        public static bool operator == ( Llamada l1, Llamada  l2){
+            return (l1.Equals(l2) && l1.nroOrigen == l2.nroOrigen && l1.nroDestino == l2.nroDestino);            
         }
 
         public static bool operator !=(Llamada l1, Llamada l2)
@@ -83,5 +91,6 @@ namespace CentralitaHerencia
             return (l1 == l2);
         }
 
+     
     }
 }

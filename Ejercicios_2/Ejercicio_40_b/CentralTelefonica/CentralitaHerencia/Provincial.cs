@@ -29,11 +29,8 @@ namespace CentralitaHerencia
             }
         }
 
-        public Provincial(string origen, Franja miFranja, float duracion, string destino)
+        public Provincial(string origen, Franja miFranja, float duracion, string destino):base(duracion, destino,origen)
         {
-            this.duracion = duracion;
-            this.nroOrigen = origen;
-            this.nroDestino = destino;
             this.franja = miFranja;
         }
 
@@ -49,8 +46,8 @@ namespace CentralitaHerencia
         {
             //Se puede hacer esto directamente con enumerados
             //Franja_1: 0.99, Franja_2: 1.25 y Franja_3: 0.66.
-            double coeficiente = (int)franja / 100;            
-            return (float)(Duracion * coeficiente);
+            double coeficiente = (int)franja ;            
+            return (float)(Duracion *( coeficiente/ 100));
         }
 
         protected override string Mostrar()
