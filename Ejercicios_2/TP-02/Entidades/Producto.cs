@@ -8,13 +8,15 @@ namespace Entidades_2017
 {
     /// <summary>
     /// La clase Producto será abstracta, evitando que se instancien elementos de este tipo.
+    /// porque el sealed
     /// </summary>
-    public sealed class Producto
+    public abstract  class Producto
     {
-        enum EMarca
+        public enum EMarca
         {
             Serenisima, Campagnola, Arcor, Ilolay, Sancor, Pepsico
         }
+
         EMarca _marca;
         string _codigoDeBarras;
         ConsoleColor _colorPrimarioEmpaque;
@@ -22,27 +24,27 @@ namespace Entidades_2017
         /// <summary>
         /// ReadOnly: Retornará la cantidad de ruedas del vehículo
         /// </summary>
-        abstract short CantidadCalorias { get; set; }
+        public abstract short CantidadCalorias { get;  }
 
         /// <summary>
         /// Publica todos los datos del Producto.
         /// </summary>
         /// <returns></returns>
-        sealed string Mostrar()
+        public virtual string Mostrar()
         {
-            return this;
+            return (string)this;
         }
 
-        private static explicit operator string(Producto p)
+        public static explicit operator string(Producto p)
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("CODIGO DE BARRAS: {0}\r\n", p._codigoDeBarras);
-            sb.AppendLine("MARCA          : {0}\r\n", p._marca.ToString());
-            sb.AppendLine("COLOR EMPAQUE  : {0}\r\n", p._colorPrimarioEmpaque.ToString());
+            sb.AppendFormat("CODIGO DE BARRAS: {0}\r\n", p._codigoDeBarras);
+            sb.AppendFormat("MARCA          : {0}\r\n", p._marca.ToString());
+            sb.AppendFormat("COLOR EMPAQUE  : {0}\r\n", p._colorPrimarioEmpaque.ToString());
             sb.AppendLine("---------------------");
 
-            return sb;
+            return sb.ToString();
         }
 
         /// <summary>
@@ -64,6 +66,13 @@ namespace Entidades_2017
         public static bool operator !=(Producto v1, Producto v2)
         {
             return (v1._codigoDeBarras == v2._codigoDeBarras);
+        }
+
+        public Producto(string codigoDeBarras, EMarca marca, ConsoleColor color)
+        {
+            this._codigoDeBarras = codigoDeBarras;
+            this._marca = marca;
+            this._colorPrimarioEmpaque = color;
         }
     }
 }

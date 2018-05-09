@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Entidades_2017
 {
-    /// <summary>
-    /// No podrá tener clases heredadas.
-    /// </summary>
-    public class Changuito
+    public sealed class Changuito
     {
         List<Producto> _productos;
         int _espacioDisponible;
+
         public enum ETipo
         {
             Dulce, Leche, Snacks, Todos
@@ -23,8 +21,9 @@ namespace Entidades_2017
         {
             this._productos = new List<Producto>();
         }
-        public Changuito(int espacioDisponible)
+        public Changuito(int espacioDisponible):this()
         {
+            
             this._espacioDisponible = espacioDisponible;
         }
         #endregion
@@ -34,7 +33,7 @@ namespace Entidades_2017
         /// Muestro la concecionaria y TODOS los Productos
         /// </summary>
         /// <returns></returns>
-        public string ToString()
+        public override string ToString()
         {
             return Changuito.Mostrar(this, ETipo.Todos);
         }
@@ -74,7 +73,7 @@ namespace Entidades_2017
                 }
             }
 
-            return sb;
+            return sb.ToString();
         }
         #endregion
 
@@ -87,7 +86,7 @@ namespace Entidades_2017
         /// <returns></returns>
         public static Changuito operator +(Changuito c, Producto p)
         {
-            foreach (Producto v in c)
+            foreach (Producto v in c._productos)
             {
                 if (v == p)
                     return c;
@@ -104,7 +103,7 @@ namespace Entidades_2017
         /// <returns></returns>
         public static Changuito operator -(Changuito c, Producto p)
         {
-            foreach (Producto v in c)
+            foreach (Producto v in c._productos)
             {
                 if (v == p)
                 {
