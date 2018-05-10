@@ -8,42 +8,61 @@ namespace Entidades_2017
 {
     public sealed class Changuito
     {
+        /// <summary>
+        /// Lista de productos del changuito
+        /// </summary>
         List<Producto> _productos;
+        /// <summary>
+        /// Espacio que queda disponible para la colocacion de productos
+        /// </summary>
         int _espacioDisponible;
 
+        /// <summary>
+        /// Tipos de productos disponibles para filtrar
+        /// </summary>
         public enum ETipo
         {
-            Dulce, Leche, Snacks, Todos
+            Dulce, 
+            Leche, 
+            Snacks, 
+            Todos
         }
 
         #region "Constructores"
+        
         private Changuito()
         {
             this._productos = new List<Producto>();
         }
+
+        /// <summary>
+        /// Inicializa un changuito vacio con espaciosDisponibles espacios para llenar
+        /// </summary>
+        /// <param name="espacioDisponible">Espacio con el que cuenta el changuito</param>
         public Changuito(int espacioDisponible):this()
-        {
-            
+        {            
             this._espacioDisponible = espacioDisponible;
         }
+
         #endregion
 
         #region "Sobrecargas"
+
         /// <summary>
-        /// Muestro la concecionaria y TODOS los Productos
+        /// Muestra el changuito y sus productos
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
             return Changuito.Mostrar(this, ETipo.Todos);
         }
+
         #endregion
 
         #region "Métodos"
 
         /// <summary>
-        /// Expone los datos del elemento y su lista (incluidas sus herencias)
-        /// SOLO del tipo requerido
+        /// Expone los datos del elemento , mientras sean del tipo tipoy su lista (incluidas sus herencias) 
         /// </summary>
         /// <param name="c">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
@@ -78,11 +97,12 @@ namespace Entidades_2017
         #endregion
 
         #region "Operadores"
+
         /// <summary>
-        /// Agregará un elemento a la lista
+        /// Agregará un producto al changuito
         /// </summary>
-        /// <param name="c">Objeto donde se agregará el elemento</param>
-        /// <param name="p">Objeto a agregar</param>
+        /// <param name="c">Changuito al que se le agregara el producto</param>
+        /// <param name="p">Producto a agregar</param>
         /// <returns></returns>
         public static Changuito operator +(Changuito c, Producto p)
         {
@@ -91,15 +111,15 @@ namespace Entidades_2017
                 if (v == p)
                     return c;
             }
-
             c._productos.Add(p);
             return c;
         }
+
         /// <summary>
-        /// Quitará un elemento de la lista
+        /// Quitará un producto del changuito
         /// </summary>
-        /// <param name="c">Objeto donde se quitará el elemento</param>
-        /// <param name="p">Objeto a quitar</param>
+        /// <param name="c">Changuito del que se quitara el producto</param>
+        /// <param name="p">Producto a quitar</param>
         /// <returns></returns>
         public static Changuito operator -(Changuito c, Producto p)
         {
@@ -110,9 +130,9 @@ namespace Entidades_2017
                     break;
                 }
             }
-
             return c;
         }
+
         #endregion
     }
 }

@@ -21,6 +21,23 @@ namespace Entidades_2017
         string _codigoDeBarras;
         ConsoleColor _colorPrimarioEmpaque;
 
+        #region "Constructores"
+
+        /// <summary>
+        /// Crea un producto con sus datos basicos
+        /// </summary>
+        /// <param name="codigoDeBarras">Numero del codigo de barras</param>
+        /// <param name="marca">Marca a la que pertenece el producto</param>
+        /// <param name="color">Color del producto</param>
+        public Producto(string codigoDeBarras, EMarca marca, ConsoleColor color)
+        {
+            this._codigoDeBarras = codigoDeBarras;
+            this._marca = marca;
+            this._colorPrimarioEmpaque = color;
+        }
+
+         #endregion
+
         /// <summary>
         /// ReadOnly: Retornará la cantidad de ruedas del vehículo
         /// </summary>
@@ -68,11 +85,5 @@ namespace Entidades_2017
             return (v1._codigoDeBarras == v2._codigoDeBarras);
         }
 
-        public Producto(string codigoDeBarras, EMarca marca, ConsoleColor color)
-        {
-            this._codigoDeBarras = codigoDeBarras;
-            this._marca = marca;
-            this._colorPrimarioEmpaque = color;
-        }
     }
 }

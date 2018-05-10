@@ -8,11 +8,18 @@ namespace Entidades_2017
 {
     public class Dulce : Producto
     {
+        /// <summary>
+        /// Crea un Dulce de leche
+        /// </summary>
+        /// <param name="marca">Marca del dulce de leche</param>
+        /// <param name="codigo">Codigo de barras</param>
+        /// <param name="color">Color del frasco</param>
         public Dulce(EMarca marca, string codigo, ConsoleColor color):base(codigo, marca, color)
         {
         }
+
         /// <summary>
-        /// Los dulces tienen 80 calorías
+        /// Retorna la cantidad de calorias
         /// </summary>
         public override short CantidadCalorias
         {
@@ -28,9 +35,8 @@ namespace Entidades_2017
 
             sb.AppendLine("DULCE");
             sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);
-            sb.AppendLine("");
-            sb.AppendLine("---------------------");
+            sb.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);            
+            sb.AppendLine("\n---------------------");
 
             return sb.ToString();
         }
