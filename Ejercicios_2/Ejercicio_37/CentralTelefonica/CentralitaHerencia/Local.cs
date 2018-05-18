@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Local : Llamada
+    public class Local : Llamada , IGuardar<Local>
     {
         protected float costo;
-        
+
+        string IGuardar<Local>.RutaDeArchivo
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
         public override float CostoLlamada
         {
             get
@@ -58,6 +63,16 @@ namespace CentralitaHerencia
         public override string ToString()
         {
             return Mostrar();
+        }
+
+        bool IGuardar<Local>.Guardar()
+        {
+            throw new NotImplementedException();
+        }
+
+        Local IGuardar<Local>.Leer()
+        {
+            throw new NotImplementedException();
         }
     }
 }

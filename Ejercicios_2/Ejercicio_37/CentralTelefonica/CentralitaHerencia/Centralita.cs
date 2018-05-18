@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Centralita
+    public class Centralita : IGuardar<String>
     {
         private List<Llamada> listaDeLlamadas;
         private string razonSocial;
 
+        string IGuardar<String>.RutaDeArchivo
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
         /// <summary>
         /// TODO
         /// </summary>
@@ -125,5 +130,21 @@ namespace CentralitaHerencia
             return central;
         }
 
+        /// <summary>
+        /// Guardar tomará el objeto y consultará todos sus datos, luego retornará true.
+        /// TODO revisar que puede querer decir con revisar todos los datos de un String
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        bool IGuardar<String>.Guardar()
+        {
+            this.ToString();
+            return true;
+        }
+
+        String IGuardar<String>.Leer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

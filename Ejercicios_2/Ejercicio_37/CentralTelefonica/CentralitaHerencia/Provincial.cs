@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Provincial : Llamada
+    public class Provincial : Llamada, IGuardar<Provincial>
     {
         protected Franja franja;
 
-        
+        string IGuardar<Provincial>.RutaDeArchivo 
+        {
+            get { throw new NotImplementedException();  }
+            set { throw new NotImplementedException();  }
+        }
         /// <summary>
         /// Costos de las franjas expresadas en centavos Franja_1: 99, Franja_2: 125 y Franja_3: 66.
         /// </summary>
@@ -70,6 +74,15 @@ namespace CentralitaHerencia
         public override bool Equals(object obj)
         {
             return obj is Provincial;
+        }
+
+        bool IGuardar<Provincial>.Guardar() {
+            throw new NotImplementedException();
+        }
+
+        Provincial IGuardar<Provincial>.Leer()
+        {
+            throw new NotImplementedException();
         }
     }
 }

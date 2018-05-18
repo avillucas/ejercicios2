@@ -7,7 +7,7 @@
     <ProjectGuid>{4C71FBB6-F18E-44EE-9240-A79DAA4AD65B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ejercicio_44</RootNamespace>
+    <RootNamespace>CentralitaHerencia</RootNamespace>
     <AssemblyName>Ejercicio_44</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

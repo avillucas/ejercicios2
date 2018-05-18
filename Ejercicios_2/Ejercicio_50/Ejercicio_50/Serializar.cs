@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_50
 {
-    class GuardarTexto<T, V> : IGuardar<T, V>
+    class Serializar<S,V> : IGuardar<S,V>
     {
-        bool IGuardar<T, V>.Guardar(T obj)
+
+        bool IGuardar<S, V>.Guardar(S obj)
         {
             return true;
         }
 
-        V IGuardar<T, V>.Leer()
+        V IGuardar<S, V>.Leer()
         {
-            return (V) Convert.ChangeType("Texto Leído",typeof(V));
+            return (V) Convert.ChangeType("Objeto Leído", typeof(V));            
         }
     }
 }
