@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace CentralitaHerencia
 {
     public class Centralita : IGuardar<String>
     {
         private List<Llamada> listaDeLlamadas;
         private string razonSocial;
+        const string logPath = "log.txt";
 
         string IGuardar<String>.RutaDeArchivo
         {
@@ -127,6 +127,14 @@ namespace CentralitaHerencia
                 throw new CentralitaException("La llamada "+llamada.NroOrigen+"=>"+llamada.NroDestino+" ya se encuentra en la central","Centralita", "operator +");
             }
             central.AgregarLlamada(llamada);
+            IGuardar<string> g = (IGuardar<string>)central;
+            try
+            {               
+                g.Guardar();
+            }
+            catch (Exception e) {
+                throw new FallaLogException("Error en el archivo", e);
+            }
             return central;
         }
 
@@ -136,15 +144,46 @@ namespace CentralitaHerencia
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        bool IGuardar<String>.Guardar()
+        bool IGuardar<string>.Guardar()
         {
-            this.ToString();
+            var culture = new System.Globalization.CultureInfo("es-AR");            
+            DateTime now = DateTime.Now;            
+            //string logLine = "Jueves 19 de octubre de 2017 19:09hs – Se realizó una llamada";
+            StringBuilder st = new StringBuilder();
+            var dia = culture.DateTimeFormat.GetDayName(now.DayOfWeek);
+            var mes = culture.DateTimeFormat.GetMonthName(now.Month);
+            //string diaSemana = ;
+            st.AppendFormat("{0} {1} de {2} de {3} {4}:{5}hs – Se realizó una llamada", dia,now.Day.ToString(), mes, now.Year, now.Hour, now.Minute);
+
+            try
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(logPath, true))
+                {
+                    file.WriteLine(st.ToString());
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
             return true;
         }
 
-        String IGuardar<String>.Leer()
+        string IGuardar<string>.Leer()
         {
-            throw new NotImplementedException();
+            string contenido;
+            try
+            {
+                using (System.IO.StreamReader file = new System.IO.StreamReader(logPath))
+                {
+                    contenido = file.ReadToEnd();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return contenido;
         }
     }
 }
