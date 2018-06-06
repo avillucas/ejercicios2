@@ -43,6 +43,9 @@ namespace CentralitaHerencia
             c.OrdenarLlamadas();
             Console.WriteLine(c.ToString());
             Console.ReadKey();
+            string log = ((IGuardar<string>)c).Leer();
+            Console.WriteLine(log);
+            Console.ReadKey();
         }
     }
 }

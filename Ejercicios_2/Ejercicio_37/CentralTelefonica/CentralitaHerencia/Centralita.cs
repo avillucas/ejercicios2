@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace CentralitaHerencia
 {
@@ -10,11 +11,17 @@ namespace CentralitaHerencia
     {
         private List<Llamada> listaDeLlamadas;
         private string razonSocial;
-
+        private string logFilePath ;
+        const string DEFAULT_LOG_FILE_NAME = "log.txt";
         string IGuardar<String>.RutaDeArchivo
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get {
+                
+                return this.logFilePath;
+            }
+            set {
+                logFilePath = value;
+            }
         }
         /// <summary>
         /// TODO
@@ -53,6 +60,7 @@ namespace CentralitaHerencia
         private Centralita()
         {
             listaDeLlamadas = new List<Llamada>();
+            logFilePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + DEFAULT_LOG_FILE_NAME;
         }
 
         public Centralita(string nombreEmpresa):this()
@@ -127,24 +135,53 @@ namespace CentralitaHerencia
                 throw new CentralitaException("La llamada "+llamada.NroOrigen+"=>"+llamada.NroDestino+" ya se encuentra en la central","Centralita", "operator +");
             }
             central.AgregarLlamada(llamada);
+            try
+            {
+                IGuardar<string> guardar = (IGuardar<string>)central;
+                guardar.Guardar();                
+            }
+            catch (Exception e) 
+            {
+                throw new FallaLogException("Error al general log",e);
+            }
             return central;
         }
 
         /// <summary>
-        /// Guardar tomará el objeto y consultará todos sus datos, luego retornará true.
-        /// TODO revisar que puede querer decir con revisar todos los datos de un String
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
+        ///El método Guardar de la implementación de IGuardar en Centralita deberá guardar en un
+        ///archivo de texto a modo de bitácora fecha y hora con el siguiente formato “Jueves 19 de
+        ///octubre de 2017 19:09hs – Se realizó una llamada”; para lo cual este método deberá ser
+        ///llamado desde el operador + (suma). En caso de no poder guardar, igualmente agregar la
+        ///llamada a la Centralita y luego lanzar la excepción FallaLogException.
+        /// </summary>        
         bool IGuardar<String>.Guardar()
         {
-            this.ToString();
+            try
+            {
+                StringBuilder st = new StringBuilder();
+                DateTime ahora = DateTime.Now; ;
+                //TODO acomodar la hora 
+                //TODO traducir mes y dia 
+                st.AppendFormat("{0} {1} de {2} de {3} {4}hs - Se realizo una llamada", ahora.DayOfWeek, ahora.Day, ahora.Month, ahora.Year, ahora.TimeOfDay);
+                string filePath  = ((IGuardar<string>)this).RutaDeArchivo;
+                StreamWriter archivo = new StreamWriter( filePath);
+                archivo.WriteLine(st.ToString(),true);
+                archivo.Close();
+            }catch(Exception e ){
+                throw e;
+            }
             return true;
         }
 
-        String IGuardar<String>.Leer()
+        public String Leer()
         {
-            throw new NotImplementedException();
+            string contenido;
+            string filePath = ((IGuardar<string>)this).RutaDeArchivo;
+            StreamReader lector = new StreamReader(filePath);
+            contenido = lector.ReadToEnd();
+            lector.Close();
+            return contenido;
         }
+
     }
 }
