@@ -31,8 +31,51 @@ namespace Ejercicio_60
         {
             int id = int.Parse(cmbProducto.SelectedValue.ToString());
             producto = ProductDAO.getOne(id);
-            txtNombre.Text = this.producto.Name;
-            txtId.Text = this.producto.Id.ToString();
+            txtNombre.Text = this.producto.Name;            
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.producto.Name = txtNombre.Text;
+                ProductDAO.Guardar(this.producto);
+            }
+            catch (Exception error) 
+            {
+                this.ErrorHandler(error);
+            }
+        }
+
+        private void ErrorHandler(Exception e) 
+        {
+            MessageBox.Show(e.Message);
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+                Product producto = new Product(0,txtCrearNombre.Text.ToString());
+                ProductDAO.Crear(producto);
+            }
+            catch (Exception error)
+            {
+                this.ErrorHandler(error);
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(cmbProducto.SelectedValue.ToString());
+                ProductDAO.Delete(id);
+            }
+            catch (Exception error)
+            {
+                this.ErrorHandler(error);
+            }
         }
 
     }

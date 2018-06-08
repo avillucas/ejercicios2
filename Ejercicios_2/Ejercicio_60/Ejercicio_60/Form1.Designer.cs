@@ -38,8 +38,11 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCrearNombre = new System.Windows.Forms.TextBox();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adventureWorks2012DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adventureWorks2012DataSet)).BeginInit();
@@ -110,29 +113,62 @@
             this.lblNombre.TabIndex = 4;
             this.lblNombre.Text = "Nombre";
             // 
-            // lblId
+            // btnGuardar
             // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(237, 65);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 5;
-            this.lblId.Text = "Id";
+            this.btnGuardar.Location = new System.Drawing.Point(240, 55);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtId
+            // label1
             // 
-            this.txtId.Location = new System.Drawing.Point(287, 58);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Nombre";
+            // 
+            // txtCrearNombre
+            // 
+            this.txtCrearNombre.Location = new System.Drawing.Point(92, 147);
+            this.txtCrearNombre.Name = "txtCrearNombre";
+            this.txtCrearNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtCrearNombre.TabIndex = 8;
+            // 
+            // btnCrear
+            // 
+            this.btnCrear.Location = new System.Drawing.Point(240, 149);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCrear.TabIndex = 10;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(332, 10);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 11;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(775, 262);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.btnCrear);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtCrearNombre);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnEditar);
@@ -160,8 +196,11 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCrearNombre;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }
 
