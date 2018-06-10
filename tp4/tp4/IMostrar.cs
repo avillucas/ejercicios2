@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmpleadoLibrary
+namespace tp4
 {
-    public class Class1
+    interface IMostrar<T>
     {
+        string MostrarDatos(IMostrar<T> elemento);
     }
 }

@@ -50,7 +50,7 @@ namespace EmpleadoLibrary
         public string Mostrar()
         {
             StringBuilder st = new StringBuilder();
-            st.AppendFormat("\n\tNOMBRE: {0}\n\tAPELLIDO: {1}\n\tLEGAJO: {2}\n\tSALARIO: ${4}", this.nombre, this.apellido, this.legajo, this.salario.ToString());
+            st.AppendFormat("\n\tNOMBRE: {0}\n\tAPELLIDO: {1}\n\tLEGAJO: {2}\n\tSALARIO: ${3}", this.nombre, this.apellido, this.legajo, this.salario.ToString());
             return st.ToString();
         }
         #endregion

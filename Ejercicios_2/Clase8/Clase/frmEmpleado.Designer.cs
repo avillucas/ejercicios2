@@ -1,6 +1,6 @@
 ﻿namespace Clase
 {
-    partial class Form1
+    partial class frmEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -33,13 +33,13 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblLegajo = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
-            this.lblGanancias = new System.Windows.Forms.Label();
+            this.lblSalario = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.mtxtLegajo = new System.Windows.Forms.MaskedTextBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
-            this.mtxtGanacias = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtSalario = new System.Windows.Forms.MaskedTextBox();
             this.btnEmpresa = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregarItem = new System.Windows.Forms.Button();
@@ -82,14 +82,14 @@
             this.lblPuesto.TabIndex = 3;
             this.lblPuesto.Text = "Puesto";
             // 
-            // lblGanancias
+            // lblSalario
             // 
-            this.lblGanancias.AutoSize = true;
-            this.lblGanancias.Location = new System.Drawing.Point(36, 171);
-            this.lblGanancias.Name = "lblGanancias";
-            this.lblGanancias.Size = new System.Drawing.Size(58, 13);
-            this.lblGanancias.TabIndex = 4;
-            this.lblGanancias.Text = "Ganancias";
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Location = new System.Drawing.Point(36, 171);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(39, 13);
+            this.lblSalario.TabIndex = 4;
+            this.lblSalario.Text = "Salario";
             // 
             // contextMenuStrip1
             // 
@@ -113,6 +113,7 @@
             // mtxtLegajo
             // 
             this.mtxtLegajo.Location = new System.Drawing.Point(175, 99);
+            this.mtxtLegajo.Mask = "0000-0000-00";
             this.mtxtLegajo.Name = "mtxtLegajo";
             this.mtxtLegajo.Size = new System.Drawing.Size(100, 20);
             this.mtxtLegajo.TabIndex = 8;
@@ -125,12 +126,13 @@
             this.cmbPuesto.Size = new System.Drawing.Size(121, 21);
             this.cmbPuesto.TabIndex = 9;
             // 
-            // mtxtGanacias
+            // mtxtSalario
             // 
-            this.mtxtGanacias.Location = new System.Drawing.Point(175, 171);
-            this.mtxtGanacias.Name = "mtxtGanacias";
-            this.mtxtGanacias.Size = new System.Drawing.Size(100, 20);
-            this.mtxtGanacias.TabIndex = 10;
+            this.mtxtSalario.Location = new System.Drawing.Point(175, 171);
+            this.mtxtSalario.Mask = "$000000";
+            this.mtxtSalario.Name = "mtxtSalario";
+            this.mtxtSalario.Size = new System.Drawing.Size(100, 20);
+            this.mtxtSalario.TabIndex = 10;
             // 
             // btnEmpresa
             // 
@@ -140,6 +142,7 @@
             this.btnEmpresa.TabIndex = 11;
             this.btnEmpresa.Text = "Empresa";
             this.btnEmpresa.UseVisualStyleBackColor = true;
+            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // btnLimpiar
             // 
@@ -169,7 +172,7 @@
             this.rtxtConsola.TabIndex = 14;
             this.rtxtConsola.Text = "";
             // 
-            // Form1
+            // frmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,17 +181,17 @@
             this.Controls.Add(this.btnAgregarItem);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEmpresa);
-            this.Controls.Add(this.mtxtGanacias);
+            this.Controls.Add(this.mtxtSalario);
             this.Controls.Add(this.cmbPuesto);
             this.Controls.Add(this.mtxtLegajo);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblGanancias);
+            this.Controls.Add(this.lblSalario);
             this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.lblLegajo);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
-            this.Name = "Form1";
+            this.Name = "frmEmpleado";
             this.Text = "Clase8";
             this.Load += new System.EventHandler(this.frmLoad);
             this.ResumeLayout(false);
@@ -202,13 +205,13 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblLegajo;
         private System.Windows.Forms.Label lblPuesto;
-        private System.Windows.Forms.Label lblGanancias;
+        private System.Windows.Forms.Label lblSalario;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.MaskedTextBox mtxtLegajo;
         private System.Windows.Forms.ComboBox cmbPuesto;
-        private System.Windows.Forms.MaskedTextBox mtxtGanacias;
+        private System.Windows.Forms.MaskedTextBox mtxtSalario;
         private System.Windows.Forms.Button btnEmpresa;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnAgregarItem;

@@ -23,8 +23,41 @@ namespace EmpleadoLibrary
         private string direccion;
         private float ganacias;
 
+        public string RazonSocial {
+            get
+            {
+                return razonSocial;
+            }
+            set
+            {
+                razonSocial = value;
+            }
+        }
+        public string Direccion
+        {
+            get
+            {
+                return direccion;
+            }
+            set
+            {
+                direccion = value;
+            }
+        }
+        public float Ganancias
+        {
+            get
+            {
+                return ganacias;
+            }
+            set
+            {
+                 ganacias = value;
+            }
+        }
+
         #region "Constructores"
-        
+
         private Empresa() 
         {
             this.nominaEmpleados = new List<Empleado>();
@@ -79,8 +112,8 @@ namespace EmpleadoLibrary
             st.AppendLine("");
             foreach (Empleado e in this.nominaEmpleados)
             {
-                st.AppendFormat("\n{0}",e.Mostrar());
-                st.AppendLine("-----------------------");
+                st.AppendFormat("{0}",e.Mostrar());
+                st.Append("\n-----------------------");
             }
 
             return st.ToString();
