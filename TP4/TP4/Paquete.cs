@@ -10,7 +10,8 @@ namespace TP4
     {
         private string direccionEntrega;
         private EEstado estado;
-        private string trackingID;
+        private string trackingID;        
+
         enum EEstado  {
             Ingresado,
             EnViaje, 
@@ -55,7 +56,18 @@ namespace TP4
         {
             throw new NotImplementedException();
         }
+        /*
+        
+        public Paquete() 
+        {
+            Paquete.InformaEstado += DelegadoEstado;
+        }
+         * */
 
+        
+        private void DelegadoEstado(Object sender, EventArgs e){
+
+        }
 
     }
 }
