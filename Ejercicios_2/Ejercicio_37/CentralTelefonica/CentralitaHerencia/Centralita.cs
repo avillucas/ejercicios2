@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 using System.IO;
 
+=======
+>>>>>>> 335e2d1415fcd728d151a4d68e904cca17657e75
 namespace CentralitaHerencia
 {
     public class Centralita : IGuardar<String>
     {
         private List<Llamada> listaDeLlamadas;
         private string razonSocial;
+<<<<<<< HEAD
         private string logFilePath ;
         const string DEFAULT_LOG_FILE_NAME = "log.txt";
+=======
+        const string logPath = "log.txt";
+
+>>>>>>> 335e2d1415fcd728d151a4d68e904cca17657e75
         string IGuardar<String>.RutaDeArchivo
         {
             get {
@@ -135,6 +143,7 @@ namespace CentralitaHerencia
                 throw new CentralitaException("La llamada "+llamada.NroOrigen+"=>"+llamada.NroDestino+" ya se encuentra en la central","Centralita", "operator +");
             }
             central.AgregarLlamada(llamada);
+<<<<<<< HEAD
             try
             {
                 IGuardar<string> guardar = (IGuardar<string>)central;
@@ -143,11 +152,21 @@ namespace CentralitaHerencia
             catch (Exception e) 
             {
                 throw new FallaLogException("Error al general log",e);
+=======
+            IGuardar<string> g = (IGuardar<string>)central;
+            try
+            {               
+                g.Guardar();
+            }
+            catch (Exception e) {
+                throw new FallaLogException("Error en el archivo", e);
+>>>>>>> 335e2d1415fcd728d151a4d68e904cca17657e75
             }
             return central;
         }
 
         /// <summary>
+<<<<<<< HEAD
         ///El método Guardar de la implementación de IGuardar en Centralita deberá guardar en un
         ///archivo de texto a modo de bitácora fecha y hora con el siguiente formato “Jueves 19 de
         ///octubre de 2017 19:09hs – Se realizó una llamada”; para lo cual este método deberá ser
@@ -168,11 +187,39 @@ namespace CentralitaHerencia
                 archivo.WriteLine(st.ToString(),true);
                 archivo.Close();
             }catch(Exception e ){
+=======
+        /// Guardar tomará el objeto y consultará todos sus datos, luego retornará true.
+        /// TODO revisar que puede querer decir con revisar todos los datos de un String
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        bool IGuardar<string>.Guardar()
+        {
+            var culture = new System.Globalization.CultureInfo("es-AR");            
+            DateTime now = DateTime.Now;            
+            //string logLine = "Jueves 19 de octubre de 2017 19:09hs – Se realizó una llamada";
+            StringBuilder st = new StringBuilder();
+            var dia = culture.DateTimeFormat.GetDayName(now.DayOfWeek);
+            var mes = culture.DateTimeFormat.GetMonthName(now.Month);
+            //string diaSemana = ;
+            st.AppendFormat("{0} {1} de {2} de {3} {4}:{5}hs – Se realizó una llamada", dia,now.Day.ToString(), mes, now.Year, now.Hour, now.Minute);
+
+            try
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(logPath, true))
+                {
+                    file.WriteLine(st.ToString());
+                }
+            }
+            catch (Exception e)
+            {
+>>>>>>> 335e2d1415fcd728d151a4d68e904cca17657e75
                 throw e;
             }
             return true;
         }
 
+<<<<<<< HEAD
         public String Leer()
         {
             string contenido;
@@ -180,6 +227,22 @@ namespace CentralitaHerencia
             StreamReader lector = new StreamReader(filePath);
             contenido = lector.ReadToEnd();
             lector.Close();
+=======
+        string IGuardar<string>.Leer()
+        {
+            string contenido;
+            try
+            {
+                using (System.IO.StreamReader file = new System.IO.StreamReader(logPath))
+                {
+                    contenido = file.ReadToEnd();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+>>>>>>> 335e2d1415fcd728d151a4d68e904cca17657e75
             return contenido;
         }
 

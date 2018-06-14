@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmpleadoLibrary
 {
-    enum EPuestoJerarquico
+    public enum EPuestoJerarquico
     {
         Administracion,
         Gerencia, 

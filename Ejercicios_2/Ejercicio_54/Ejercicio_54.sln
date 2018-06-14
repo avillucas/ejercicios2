@@ -1,6 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+<<<<<<< HEAD
 # Visual Studio 2012
+=======
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+>>>>>>> 335e2d1415fcd728d151a4d68e904cca17657e75
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_44", "..\Ejercicio_44\Ejercicio_44\Ejercicio_44.csproj", "{4C71FBB6-F18E-44EE-9240-A79DAA4AD65B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentralitaHerencia", "..\Ejercicio_37\CentralTelefonica\CentralitaHerencia\CentralitaHerencia.csproj", "{AE53A2EE-A386-4DAA-B343-0334BEB4428C}"
@@ -23,4 +29,10 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
+=======
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A95E9BFB-C734-4B8A-9D4F-A8E357CB7129}
+	EndGlobalSection
+>>>>>>> 335e2d1415fcd728d151a4d68e904cca17657e75
 EndGlobal
