@@ -17,3 +17,5 @@ C:\Users\Lucas\c-sharp\ejercicios2\Ejercicio_16\Ejercicio_16\obj\Debug\Ejercicio
 C:\Users\Lucas\c-sharp\ejercicios2\Ejercicio_16\Ejercicio_16\obj\Debug\Ejercicio_16.csproj.CoreCompileInputs.cache
 C:\Users\Lucas\c-sharp\ejercicios2\Ejercicio_16\Ejercicio_16\obj\Debug\Ejercicio_16.exe
 C:\Users\Lucas\c-sharp\ejercicios2\Ejercicio_16\Ejercicio_16\obj\Debug\Ejercicio_16.pdb
+D:\lucas2\Ejercicio_16\Ejercicio_16\bin\Debug\Ejercicio_16.exe.config
+D:\lucas2\Ejercicio_16\Ejercicio_16\obj\Debug\Ejercicio_16.exe

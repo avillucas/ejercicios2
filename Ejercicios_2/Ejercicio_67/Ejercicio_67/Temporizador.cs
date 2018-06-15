@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Ejercicio_67
 {
-    class Temporizador
+    public sealed class Temporizador
     {
         public delegate void EncargadoTiempo();
         public event EncargadoTiempo EventoTiempo;
@@ -19,12 +19,16 @@ namespace Ejercicio_67
         {
             set 
             {
-                //&&  this.hilo.ThreadState TODO VALIDAR QUE ESTE CORRIENDO EL HILO
+                if (Object.ReferenceEquals(this.hilo, null)) 
+                {
+                    this.hilo = new Thread(Corriendo);
+                }
+                //
                 if(value && !this.Activo)
                 {   
                     this.hilo.Start();
                 }else if(!value && this.Activo){
-                  this.hilo.Suspend();
+                    this.hilo.Abort();
                 }
             }
             get 
@@ -45,9 +49,13 @@ namespace Ejercicio_67
             }
         }
 
-        public void Corriendo(){
-            Thread.Sleep(this.Intervalo);
-            this.EventoTiempo +=;
+        private void Corriendo(){
+            if (intervalo == 0) this.intervalo = 1000;
+            do
+            {
+                Thread.Sleep(this.Intervalo);
+                this.EventoTiempo();
+            } while (true);
         }        
     }
 }
