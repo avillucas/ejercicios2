@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{BAA55B56-8F74-4028-955C-9623F70DC25C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntidadesTesting", "EntidadesTesting\EntidadesTesting.csproj", "{DF5CF4C3-389D-4A48-91CA-90CA6C0A48D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmFinal", "WindowsFormsApplication1\frmFinal.csproj", "{643E591D-6ED2-400C-AA28-96A7397F7DAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAA55B56-8F74-4028-955C-9623F70DC25C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA55B56-8F74-4028-955C-9623F70DC25C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA55B56-8F74-4028-955C-9623F70DC25C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA55B56-8F74-4028-955C-9623F70DC25C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF5CF4C3-389D-4A48-91CA-90CA6C0A48D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5CF4C3-389D-4A48-91CA-90CA6C0A48D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5CF4C3-389D-4A48-91CA-90CA6C0A48D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5CF4C3-389D-4A48-91CA-90CA6C0A48D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{643E591D-6ED2-400C-AA28-96A7397F7DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{643E591D-6ED2-400C-AA28-96A7397F7DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{643E591D-6ED2-400C-AA28-96A7397F7DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{643E591D-6ED2-400C-AA28-96A7397F7DAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
